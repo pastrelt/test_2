@@ -35,7 +35,7 @@ for i in range(num_segments_height):
 for index, (segment_image) in scans.items():
     cv2.imwrite(f'scan_segment_{index}.png', segment_image)
 
-# Пример показа одного из сканов (опционально)
+## Пример показа одного из сканов (опционально)
 # cv2.imshow('Segment 1', scans[128])
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
