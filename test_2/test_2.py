@@ -69,7 +69,7 @@ for button in buttons_to_click:
 current_position = pyautogui.position()
 print(f"Текущая позиция курсора: {current_position}")
 
-# Удаляем временные файлы PNG после завершения программы
+## Удаляем временные файлы PNG после завершения программы
 for index in range(1, num_segments_width * num_segments_height + 1):
     file_name = f'scan_segment_{index}.png'
     if os.path.exists(file_name):
