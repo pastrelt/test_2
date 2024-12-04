@@ -32,7 +32,7 @@ for i in range(num_segments_height):
         scans[i * num_segments_width + j + 1] = cv2.cvtColor(np.array(screenshot), cv2.COLOR_RGB2BGR)
 
 # Выводим координаты и сохраняем сканы
-for index, (segment_image) in scans.items():
+for index, segment_image in scans.items():
     cv2.imwrite(f'scan_segment_{index}.png', segment_image)
 
 ## Пример показа одного из сканов (опционально)
@@ -68,3 +68,10 @@ for button in buttons_to_click:
 # Выводим информацию о текущем положении курсора
 current_position = pyautogui.position()
 print(f"Текущая позиция курсора: {current_position}")
+
+# Удаляем временные файлы PNG после завершения программы
+for index in range(1, num_segments_width * num_segments_height + 1):
+    file_name = f'scan_segment_{index}.png'
+    if os.path.exists(file_name):
+        os.remove(file_name)
+        print(f"Удален файл: {file_name}")
